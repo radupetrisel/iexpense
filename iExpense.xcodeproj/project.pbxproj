@@ -15,6 +15,7 @@
 		7C2659582A5C807E0072651F /* ExpenseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2659572A5C807E0072651F /* ExpenseItem.swift */; };
 		7C26595A2A5C809C0072651F /* Expenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2659592A5C809C0072651F /* Expenses.swift */; };
 		7C26595C2A5C850E0072651F /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C26595B2A5C850E0072651F /* AddView.swift */; };
+		7C26595E2A5C91740072651F /* ExpensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C26595D2A5C91740072651F /* ExpensesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		7C2659572A5C807E0072651F /* ExpenseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseItem.swift; sourceTree = "<group>"; };
 		7C2659592A5C809C0072651F /* Expenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expenses.swift; sourceTree = "<group>"; };
 		7C26595B2A5C850E0072651F /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		7C26595D2A5C91740072651F /* ExpensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				7C2659472A5C306B0072651F /* iExpenseApp.swift */,
 				7C2659492A5C306B0072651F /* ContentView.swift */,
+				7C26595D2A5C91740072651F /* ExpensesView.swift */,
 				7C26594B2A5C306C0072651F /* Assets.xcassets */,
 				7C26594D2A5C306C0072651F /* Preview Content */,
 				7C2659572A5C807E0072651F /* ExpenseItem.swift */,
@@ -151,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C26595A2A5C809C0072651F /* Expenses.swift in Sources */,
+				7C26595E2A5C91740072651F /* ExpensesView.swift in Sources */,
 				7C26594A2A5C306B0072651F /* ContentView.swift in Sources */,
 				7C26595C2A5C850E0072651F /* AddView.swift in Sources */,
 				7C2659582A5C807E0072651F /* ExpenseItem.swift in Sources */,

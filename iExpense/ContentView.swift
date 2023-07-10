@@ -16,23 +16,10 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(expenses.items) { item in
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text(item.name)
-                                .font(.headline)
-                            Text(item.category)
-                        }
-                        
-                        Spacer()
-                        
-                        Text(item.value, format: .currency(code: currencyId))
-                            .fontWeight(.light)
-                            .foregroundColor(getForeground(for: item.value))
-                    }
+            List(Category.allCases, id: \.self) { category in
+                Section(category.rawValue) {
+                    ExpensesView(expenseItems: category == .personal ? expenses.personalItems : expenses.businessItems, category: category, currencyId: currencyId) { expenses.remove(category, atOffsets: $0) }
                 }
-                .onDelete(perform: remove(atOffsets:))
             }
             .navigationTitle("iExpense")
             .toolbar {
@@ -46,22 +33,6 @@ struct ContentView: View {
                 AddView(expenses: expenses, currencyId: currencyId)
             }
         }
-    }
-    
-    private func remove(atOffsets offsets: IndexSet) {
-        expenses.items.remove(atOffsets: offsets)
-    }
-    
-    private func getForeground(for amount: Double) -> Color {
-        if amount < 10 {
-            return .green
-        }
-        
-        if amount < 100 {
-            return .primary
-        }
-        
-        return .red
     }
 }
 

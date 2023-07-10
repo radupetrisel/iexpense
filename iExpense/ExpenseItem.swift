@@ -11,6 +11,10 @@ struct ExpenseItem: Identifiable, Codable {
     var id = UUID()
     
     let name: String
-    let category: String
+    let category: Category
     let value: Double
+}
+
+enum Category: String, CaseIterable, Codable {
+    case personal, business
 }
