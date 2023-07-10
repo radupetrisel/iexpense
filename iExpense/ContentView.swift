@@ -28,6 +28,8 @@ struct ContentView: View {
                         Spacer()
                         
                         Text(item.value, format: .currency(code: currencyId))
+                            .fontWeight(.light)
+                            .foregroundColor(getForeground(for: item.value))
                     }
                 }
                 .onDelete(perform: remove(atOffsets:))
@@ -48,6 +50,18 @@ struct ContentView: View {
     
     private func remove(atOffsets offsets: IndexSet) {
         expenses.items.remove(atOffsets: offsets)
+    }
+    
+    private func getForeground(for amount: Double) -> Color {
+        if amount < 10 {
+            return .green
+        }
+        
+        if amount < 100 {
+            return .primary
+        }
+        
+        return .red
     }
 }
 
