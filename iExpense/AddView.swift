@@ -9,13 +9,15 @@ import SwiftUI
 
 struct AddView: View {
     @Environment(\.dismiss) private var dismiss
-    @ObservedObject var expenses: Expenses
+    
+    private let types = ["Personal", "Business"]
     
     @State private var name = ""
     @State private var type = "Personal"
     @State private var amount = 0.0
-    
-    private let types = ["Personal", "Business"]
+
+    @ObservedObject var expenses: Expenses
+    let currencyId: String
     
     var body: some View {
         NavigationView {
@@ -45,6 +47,6 @@ struct AddView: View {
 
 struct AddView_Previews: PreviewProvider {
     static var previews: some View {
-        AddView(expenses: Expenses())
+        AddView(expenses: Expenses(), currencyId: "USD")
     }
 }

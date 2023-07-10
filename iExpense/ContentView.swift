@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    private let currencyId = Locale.current.currency?.identifier ?? "USD"
+    
     @StateObject private var expenses = Expenses()
     
     @State private var showingAddView = false
@@ -25,7 +27,7 @@ struct ContentView: View {
                         
                         Spacer()
                         
-                        Text(item.value, format: .currency(code: "USD"))
+                        Text(item.value, format: .currency(code: currencyId))
                     }
                 }
                 .onDelete(perform: remove(atOffsets:))
@@ -39,7 +41,7 @@ struct ContentView: View {
                 }
             }
             .sheet(isPresented: $showingAddView) {
-                AddView(expenses: expenses)
+                AddView(expenses: expenses, currencyId: currencyId)
             }
         }
     }
